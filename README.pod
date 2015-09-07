@@ -10,10 +10,6 @@ This is a fork of L<http://code.google.com/p/responseheaderfilter>.
 
 =item *
 
-commons-collections.jar
-
-=item *
-
 commons-lang.jar
 
 =item *
@@ -35,11 +31,10 @@ Just clone the git repository and put the jars named in I<DEPENDENCIES> into a f
 Copy the file I<response-header-filter-1.0.jar> onto your server expand the classpath with it.
 
 If you're using tanuki wrapper open your wrapper.conf and add the following entries:
-
- wrapper.java.classpath.4=/usr/share/java/commons-collections.jar
- wrapper.java.classpath.5=/usr/share/java/commons-lang.jar
- wrapper.java.classpath.6=/usr/share/java/tomcat6-servlet-2.5-api.jar
- wrapper.java.classpath.7=/usr/ahre/java/response-header-filter-1.0.jar
+ 
+ wrapper.java.classpath.4=/usr/share/java/commons-lang.jar
+ wrapper.java.classpath.5=/usr/share/java/tomcat6-servlet-2.5-api.jar
+ wrapper.java.classpath.6=/usr/ahre/java/response-header-filter-1.0.jar
 
 Now open your I<web.xml> and add the following lines:
 
