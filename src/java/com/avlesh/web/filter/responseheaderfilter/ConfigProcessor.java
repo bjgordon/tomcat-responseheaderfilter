@@ -196,7 +196,7 @@ public class ConfigProcessor {
               //add the list of headers against this condition, only when both of them are "valid" (read not null)
               if(condition != null){
                 List<Rule.ResponseHeader> responseHeaders = getResponseHeader(node);
-                if(CollectionUtils.isNotEmpty(responseHeaders)){
+                if(responseHeaders != null && !responseHeaders.isEmpty()){
                   conditionalResponseHeaders.put(condition, responseHeaders);
                 }
               }else{
@@ -205,7 +205,7 @@ public class ConfigProcessor {
             }
 
             //if this mapping has "valid" rules, add it as a rule in the mapper
-            if(CollectionUtils.isNotEmpty(defaultResponseHeaders) || !conditionalResponseHeaders.isEmpty()){
+            if ((defaultResponseHeaders != null && !defaultResponseHeaders.isEmpty()) || !conditionalResponseHeaders.isEmpty()){
               Rule rule = new Rule();
               rule.setProcessorClass(mappingProcessorForThisRule);
               rule.setUrl(url);
