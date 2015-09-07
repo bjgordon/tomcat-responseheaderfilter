@@ -90,7 +90,7 @@ public class ResponseHeaderManagerFilter implements Filter {
     configFile = new File(fullConfigFilePath);
     if(!configFile.exists() || !configFile.canRead()){
       //not expecting this, the config file should exist and be readable
-      throw new RuntimeException("Cannot initialize ResponseHeaderManagerFilter, error reading " + configFileName);
+      throw new RuntimeException("Cannot initialize ResponseHeaderManagerFilter, error reading " + configFile.getAbsolutePath());
     }
 
     //object to hold preferences related to conf reloading
